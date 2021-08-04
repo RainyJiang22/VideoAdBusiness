@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="BottomItemView">
+        <attr name="buttonText" format="string"/>
+        <attr name="buttonChecked" format="boolean"/>
+        <attr name="checkedIcon" format="reference"/>
+        <attr name="uncheckedIcon" format="reference"/>
+        <attr name="iconScaleMax" format="float"/>
+        <attr name="iconScaleMin" format="float"/>
+    </declare-styleable>
+
+</resources>
