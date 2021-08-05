@@ -3,6 +3,8 @@ package com.jacky.videosdk.okhttp
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import com.jacky.videosdk.R
 import com.jacky.videosdk.okhttp.listener.DisposeDataHandle
 import com.jacky.videosdk.okhttp.listener.DisposeDataListener
@@ -46,5 +48,11 @@ class BaseOkHttpTest : AppCompatActivity() {
             }
 
         })))
+    }
+
+
+    private fun testApi() {
+        OkHttpRepository.getRequest("https://wanandroid.com/article/listproject/0/json",
+        null,null)
     }
 }

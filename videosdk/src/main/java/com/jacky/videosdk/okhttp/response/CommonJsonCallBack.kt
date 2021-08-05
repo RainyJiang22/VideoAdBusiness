@@ -2,6 +2,7 @@ package com.jacky.videosdk.okhttp.response
 
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import com.alibaba.fastjson.JSON
 import com.jacky.videosdk.adutil.ResponseEntityToModule
 import com.jacky.videosdk.okhttp.exception.OkHttpException
@@ -21,6 +22,9 @@ import com.jacky.videosdk.okhttp.listener.DisposeHandleCookieListener
  * @date 2021/7/20
  */
 class CommonJsonCallBack : Callback {
+    companion object {
+        const val TAG = "CommonRequest"
+    }
 
     /**
      * the logic layer exception, may alter in different app
@@ -117,10 +121,12 @@ class CommonJsonCallBack : Callback {
             } else {
                 //将服务器返回给我们的异常，回调到应用层去处理
                 mListener?.onFailure(OkHttpException(OTHER_ERROR,result.get(RESULT_CODE)))
+                Log.e(TAG, "handleResponse: onFailure${result.get(RESULT_CODE)}")
             }
 
         } catch (e: Exception) {
             mListener?.onFailure(OkHttpException(OTHER_ERROR, e.message))
+            Log.e(TAG, "handleResponse: ${e.message}")
             e.printStackTrace()
         }
 
