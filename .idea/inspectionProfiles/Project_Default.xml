@@ -30,7 +30,7 @@
       <option name="IGNORE_JAVADOC_PERIOD" value="true" />
       <option name="IGNORE_DUPLICATED_THROWS" value="false" />
       <option name="IGNORE_POINT_TO_ITSELF" value="false" />
-      <option name="myAdditionalJavadocTags" value="文件描述：递归ORM映射(有反射，不能被混淆)" />
+      <option name="myAdditionalJavadocTags" value="文件描述：递归ORM映射(有反射，不能被混淆),date" />
     </inspection_tool>
   </profile>
 </component>
