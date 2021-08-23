@@ -148,8 +148,6 @@ object ResponseEntityToModule {
     }
 
     private fun isWrappedPrimitive(type: Class<*>): Boolean {
-        return if (type.name == Boolean::class.java.name || type.name == Byte::class.java.name || type.name == Char::class.java.name || type.name == Short::class.java.name || type.name == Int::class.java.name || type.name == Long::class.java.name || type.name == Float::class.java.name || type.name == Double::class.java.name) {
-            true
-        } else false
+        return type.name == Boolean::class.java.name || type.name == Byte::class.java.name || type.name == Char::class.java.name || type.name == Short::class.java.name || type.name == Int::class.java.name || type.name == Long::class.java.name || type.name == Float::class.java.name || type.name == Double::class.java.name
     }
 }
