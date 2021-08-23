@@ -3,6 +3,9 @@ package com.example.videobusiness;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatTextView;
+
 import com.example.videobusiness.activity.TestActivity;
 
 import org.junit.Assert;
@@ -17,14 +20,14 @@ import org.robolectric.annotation.Config;
  * @date 2021/8/23
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(sdk = 30)
+@Config(sdk = 23)
 public class TestActivityTest {
 
     @Test
     public void clickingButtonChangeTextView() throws Exception {
         TestActivity testActivity = Robolectric.setupActivity(TestActivity.class);
-        Button button =  testActivity.findViewById(R.id.text_button);
-        TextView results = testActivity.findViewById(R.id.txt_test);
+        AppCompatButton button =  testActivity.findViewById(R.id.text_button);
+        AppCompatTextView results = testActivity.findViewById(R.id.txt_test);
 
         //模拟点击按钮
         button.performClick();
