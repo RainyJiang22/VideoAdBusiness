@@ -33,7 +33,7 @@ class BottomItemView @JvmOverloads constructor(
     private val textView by lazy { AppCompatTextView(context) }
     private val interpolator = LinearInterpolator()
     private val duration = 350L
-    private var scaleMax = 1.2f
+    private var scaleMax = 1.0f
     private var scaleMin = 1.0f
 
     init {
