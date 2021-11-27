@@ -165,3 +165,8 @@ abstract class BaseFragment : Fragment() {
      2. 提供单例对象对外提供接口
      3. 对外提供加载图片API
     
+
+
+## 第四部分 首页列表开发与测试
+
+

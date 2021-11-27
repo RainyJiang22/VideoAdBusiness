@@ -19,9 +19,10 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
+
 /**
- * @author jacky
- * @date 2021/7/17
+ * @author vision
+ * @function support the sslsocket
  */
 public class HttpsUtils {
     public static SSLSocketFactory getSslSocketFactory(InputStream[] certificates, InputStream bksFile, String password) {
@@ -155,7 +156,6 @@ public class HttpsUtils {
     public static SSLSocketFactory initSSLSocketFactory() {
         SSLContext sslContext = null;
         try {
-            //与服务器算法保持一致
             sslContext = SSLContext.getInstance("SSL");
             X509TrustManager[] xTrustArray = new X509TrustManager[]
                     {initTrustManager()};

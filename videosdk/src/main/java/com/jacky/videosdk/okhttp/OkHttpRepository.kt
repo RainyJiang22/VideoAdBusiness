@@ -9,6 +9,7 @@ import okhttp3.FormBody
 import okhttp3.Headers
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import javax.security.auth.login.LoginException
 
 /**
  * @author jacky
@@ -45,6 +46,7 @@ object OkHttpRepository {
             val call = client.newCall(request)
             //通过suspend函数获取Json字符串
             val json = getJson(call)
+            Log.e("EasyOkHttp", "getRequest: $json")
             Result.success(json)
         } catch (e: Exception) {
             Log.d("EasyOkHttp", "Repository getRequest failed")
@@ -78,7 +80,7 @@ object OkHttpRepository {
             val call = request?.let { client.newCall(it) }
             //通过suspend函数获取Json字符串
             val json = call?.let { getJson(it) }
-
+            Log.d("EasyOkHttp", "getRequest:$json")
             Result.success(json)
         } catch (e: Exception) {
             Log.d("EasyOkHttp", "Repository postRequest failed")

@@ -99,12 +99,14 @@ class CommonJsonCallBack : Callback {
          */
         try {
             val result = JSONObject(responseObj.toString())
+            Log.e(TAG, "handleResponse: result is $result")
             if (result.has(RESULT_CODE)) {
                 //从json对象中取出我们的响应码，若为0则为正确的响应
                 if (result.getInt(RESULT_CODE) == RESULT_CODE_VALUE) {
                     if (mClass == null) {
                         mListener?.onSuccess(result)
                     } else {
+                        Log.e(TAG, "handleResponse: the result is$result")
                         //需要我们将json对象转化为实体对象
                         val obj = ResponseEntityToModule.parseJsonObjectToModule(
                             result, mClass!!
@@ -120,13 +122,13 @@ class CommonJsonCallBack : Callback {
                 }
             } else {
                 //将服务器返回给我们的异常，回调到应用层去处理
-                mListener?.onFailure(OkHttpException(OTHER_ERROR,result.get(RESULT_CODE)))
+                mListener?.onFailure(OkHttpException(OTHER_ERROR, result.get(RESULT_CODE)))
                 Log.e(TAG, "handleResponse: onFailure${result.get(RESULT_CODE)}")
             }
 
         } catch (e: Exception) {
             mListener?.onFailure(OkHttpException(OTHER_ERROR, e.message))
-            Log.e(TAG, "handleResponse: ${e.message}")
+            Log.e(TAG, "handleResponse: Other_error${e.message}")
             e.printStackTrace()
         }
 

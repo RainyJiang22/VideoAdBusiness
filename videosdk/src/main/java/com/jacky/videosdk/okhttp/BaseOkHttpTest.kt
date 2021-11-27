@@ -33,6 +33,7 @@ class BaseOkHttpTest : AppCompatActivity() {
 
 
     private fun test() {
+
         CommonOkHttpClient.sendRequest(CommonRequest.createGetRequest(
             "https://wanandroid.com/article/listproject/0/json",
             null
